@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Loading Effect</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <div class="block1"></div>
+    <div class="block2"></div>
+    <div class="circle"></div>
+  </div>
+  <script>
+    var interval = setInterval(function(){
+     var snow = document.createElement("div");
+     snow.classList.add("snow");
+     var random = Math.random();
+     snow.style.left = random*100 + "%";
+     snow.style.position = "absolute";
+     if(random*100 < 50){
+       snow.style.backgroundColor = "#03fce3";
+     }
+     else{
+       snow.style.backgroundColor = "azure";
+     }
+     document.body.appendChild(snow);
+    },200);
+    var over = setTimeout(function(){
+     clearInterval(interval);
+    },5000)
+  </script>
+</body>
+</html>
